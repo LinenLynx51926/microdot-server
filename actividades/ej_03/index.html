@@ -3,22 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad #</title>
+    <title>Control de Temperatura</title>
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <header>
-        <h1>Actividad #</h1>
+        <h1>Panel de Control Térmico</h1>
+        <p>Milovan Radakoff - 7° 2° Aviónica Comisión A</p>
     </header>
     <main>
+        <div class="container">
+            <div class="control-panel">
+                <div class="control-group">
+                    <label for="setpoint">Temperatura de Referencia:</label>
+                    <div class="value-display">
+                        <span id="setpoint-value">25</span> °C
+                    </div>
+                    <input type="range" id="setpoint" min="0" max="30" value="25" step="0.5" class="slider">
+                    <div class="range-labels">
+                        <span>0°C</span>
+                        <span>30°C</span>
+                    </div>
+                </div>
+                
+                <div class="status-panel">
+                    <div class="status-item">
+                        <span class="label">Temperatura Actual:</span>
+                        <span id="temp-actual" class="value temperature">--</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Estado del Buzzer:</span>
+                        <span id="buzzer-status" class="value buzzer">--</span>
+                    </div>
+                </div>
+                
+                <div class="indicator">
+                    <div class="indicator-label">Diferencia de Temperatura</div>
+                    <div class="indicator-bar">
+                        <div id="temp-indicator" class="indicator-fill"></div>
+                    </div>
+                    <div class="indicator-scale">
+                        <span>Más Frío</span>
+                        <span>Setpoint</span>
+                        <span>Más Caliente</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <h3>Instrucciones:</h3>
+                <p>1. Desliza el control para establecer la temperatura de referencia</p>
+                <p>2. El buzzer se activará cuando la temperatura supere el setpoint</p>
+                <p>3. Los valores se actualizan automáticamente cada 2 segundos</p>
+            </div>
+        </div>
     </main>
     <footer>
         <p>Representación Frontal y Visual de Datos</p>
         <p>Computadoras de Aeronaves</p>
-        <p>Alumno XX</p>
+        <p>Alumno: Milovan Radakoff</p>
         <p>Prof. Carlassara Fabrizio</p>
         <p id="fecha"></p>
     </footer>
     <script src="scripts/base.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>
