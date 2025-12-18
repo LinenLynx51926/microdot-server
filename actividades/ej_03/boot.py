@@ -53,7 +53,7 @@ def index(req):
             <p>Estado del buzzer: <span id="buzzer-status">--</span></p>
         </main>
         <footer>
-            <p>Joaquin Granata 7° 2° Avionica Comisión A - 2025</p>
+            <p>Milovan Radakoff 7° 2° Avionica Comisión A - 2025</p>
         </footer>
         <script>
             const setpointSlider = document.getElementById("setpoint");
@@ -116,5 +116,6 @@ async def loop_sensor():
 async def main():
     asyncio.create_task(loop_sensor())
     app.run(debug=True)
+
 
 asyncio.run(main())
